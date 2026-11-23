@@ -1,0 +1,634 @@
+/* ==================== Global & Theme Variables ==================== */
+:root {
+    --bg-dark: #0a0c10;
+    --bg-card: #141821;
+    --bg-card-alt: #181e29;
+    --lime: #a3e635;
+    --lime-hover: #84cc16;
+    --text-muted: #9ca3af;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    font-family: 'Chakra Petch', sans-serif;
+    padding-top: 72px;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .display-font {
+    font-family: 'Days One', 'Chakra Petch', sans-serif;
+}
+
+.text-lime {
+    color: var(--lime) !important;
+}
+
+/* Section Eyebrow with flanking lines */
+.section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--lime);
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.section-eyebrow::before,
+.section-eyebrow::after {
+    content: "";
+    width: 44px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--lime));
+    display: inline-block;
+}
+
+.section-eyebrow::after {
+    background: linear-gradient(90deg, var(--lime), transparent);
+}
+
+/* ==================== Navbar ==================== */
+.navbar-custom {
+    background-color: rgba(10, 12, 16, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 0;
+}
+
+.navbar-brand {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--lime) !important;
+}
+
+.navbar-custom .nav-link {
+    color: #d1d5db;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.25s ease;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: var(--lime) !important;
+}
+
+.nav-icon-btn {
+    color: #e5e7eb;
+    font-size: 17px;
+    margin-right: 16px;
+    transition: color 0.25s ease;
+    text-decoration: none;
+}
+
+.nav-icon-btn:hover {
+    color: var(--lime);
+}
+
+.btn-lime {
+    background-color: var(--lime);
+    color: #0a0c10;
+    font-weight: 700;
+    border: 2px solid var(--lime);
+    transition: all 0.25s ease;
+}
+
+.btn-lime:hover {
+    background-color: var(--lime-hover);
+    border-color: var(--lime-hover);
+    color: #0a0c10;
+    box-shadow: 0 0 22px rgba(163, 230, 53, 0.45);
+    transform: translateY(-2px);
+}
+
+.btn-outline-lime {
+    background-color: transparent;
+    color: var(--lime);
+    font-weight: 700;
+    border: 2px solid var(--lime);
+    transition: all 0.25s ease;
+}
+
+.btn-outline-lime:hover {
+    background-color: var(--lime);
+    color: #0a0c10;
+    box-shadow: 0 0 20px rgba(163, 230, 53, 0.35);
+    transform: translateY(-2px);
+}
+
+/* ==================== Hero Section ==================== */
+.hero-section {
+    position: relative;
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    padding: 72px 0;
+    background:
+        linear-gradient(rgba(10, 12, 16, 0.84), rgba(10, 12, 16, 0.93)),
+        url("../images/hero-bg.jpg") center / cover no-repeat;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hero-title {
+    font-size: 3.85rem;
+    font-weight: 700;
+    line-height: 1.06;
+    letter-spacing: 1.5px;
+    margin-bottom: 22px;
+}
+
+.hero-desc {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: 530px;
+    margin-bottom: 32px;
+}
+
+.hero-image-wrap {
+    position: relative;
+}
+
+.hero-image-frame {
+    border-radius: 20px;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--lime), #22c55e, rgba(163, 230, 53, 0.25));
+    box-shadow: 0 0 42px rgba(163, 230, 53, 0.3);
+}
+
+.hero-image-frame img {
+    width: 100%;
+    border-radius: 17px;
+    display: block;
+}
+
+.active-players-card {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    background: rgba(15, 18, 24, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(163, 230, 53, 0.38);
+    border-radius: 14px;
+    padding: 14px 22px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+
+/* ==================== Our Games Section ==================== */
+.games-section {
+    padding: 96px 0;
+    background-color: var(--bg-dark);
+}
+
+.game-card {
+    position: relative;
+    height: 360px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    background-color: var(--bg-card);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+}
+
+.game-card-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(to top, rgba(163, 230, 53, 0.95) 0%, rgba(163, 230, 53, 0.38) 40%, rgba(10, 12, 16, 0.25) 75%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--lime);
+    box-shadow: 0 0 28px rgba(163, 230, 53, 0.35);
+}
+
+.game-card:hover img {
+    transform: scale(1.06);
+}
+
+.game-card:hover .game-card-overlay {
+    opacity: 1;
+}
+
+.game-tags {
+    display: flex;
+    gap: 8px;
+}
+
+.game-tag {
+    background-color: rgba(10, 12, 16, 0.88);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.game-tag i {
+    color: var(--lime);
+}
+
+.game-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0a0c10;
+    margin: 0;
+}
+
+.circle-nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background-color: var(--bg-card);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.circle-nav-btn:hover {
+    border-color: var(--lime);
+    color: var(--lime);
+    box-shadow: 0 0 14px rgba(163, 230, 53, 0.3);
+}
+
+/* ==================== What We Do Section ==================== */
+.what-we-do-section {
+    padding: 96px 0 64px 0;
+    background-color: var(--bg-dark);
+}
+
+.service-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--lime);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+
+.service-icon-box {
+    width: 62px;
+    height: 62px;
+    border-radius: 14px;
+    background-color: rgba(163, 230, 53, 0.12);
+    border: 1px solid rgba(163, 230, 53, 0.28);
+    color: var(--lime);
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover .service-icon-box {
+    background-color: rgba(163, 230, 53, 0.25);
+    transform: scale(1.06);
+}
+
+.service-card h5 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.service-img-card {
+    height: 250px;
+    border-radius: 18px;
+    overflow: hidden;
+    background-color: var(--lime);
+    border: 2px solid var(--lime);
+    transition: transform 0.3s ease;
+}
+
+.service-img-card:hover {
+    transform: translateY(-6px);
+}
+
+.service-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==================== Glowing Divider & Infinite 2-Row Marquee ==================== */
+.neon-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--lime), transparent);
+    box-shadow: 0 0 22px var(--lime);
+    margin: 24px 0 48px 0;
+}
+
+.logo-showcase {
+    position: relative;
+    padding: 28px 0 72px 0;
+    background: radial-gradient(circle at center, rgba(163, 230, 53, 0.16) 0%, transparent 62%);
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000000 12%, #000000 88%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, #000000 12%, #000000 88%, transparent 100%);
+}
+
+.marquee-row {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+}
+
+.marquee-left {
+    animation: scroll-left 35s linear infinite;
+}
+
+.marquee-right {
+    animation: scroll-right 35s linear infinite;
+}
+
+.marquee-row:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+.marquee-item {
+    width: 112px;
+    height: 112px;
+    background-color: rgba(20, 24, 33, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 8px;
+    flex-shrink: 0;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.marquee-item:hover {
+    border-color: var(--lime);
+    transform: scale(1.05);
+}
+
+.marquee-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ==================== Our Team Section (Grayscale + backdrop-filter hover) ==================== */
+.team-section {
+    padding: 96px 0;
+    background-color: var(--bg-dark);
+}
+
+.team-card {
+    position: relative;
+    height: 360px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: var(--bg-card);
+    transition: border-color 0.35s ease, transform 0.35s ease;
+}
+
+.team-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: transform 0.45s ease;
+}
+
+.team-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 22px 36px 20px 18px;
+    background: linear-gradient(to top, rgba(10, 12, 16, 0.95), rgba(10, 12, 16, 0.6));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    transition: backdrop-filter 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--lime);
+}
+
+.team-card:hover img {
+    transform: scale(1.05);
+}
+
+.team-card:hover .team-overlay {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.94), rgba(30, 58, 138, 0.35));
+    border-top-color: rgba(163, 230, 53, 0.45);
+}
+
+.team-name {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.team-role {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--lime);
+    margin-bottom: 2px;
+}
+
+.team-achv {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.vertical-alias {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #9ca3af;
+    transition: color 0.3s ease;
+}
+
+.team-card:hover .vertical-alias {
+    color: var(--lime);
+}
+
+/* ==================== Contact Us Section ==================== */
+.contact-section {
+    padding: 96px 0;
+    background-color: #11151d;
+}
+
+.info-card {
+    background-color: var(--bg-card-alt);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.info-icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--lime);
+    color: #0a0c10;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.community-card {
+    background: linear-gradient(135deg, #a3e635, #22c55e);
+    color: #0a0c10;
+    border-radius: 18px;
+    padding: 28px;
+}
+
+.social-dark-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #0a0c10;
+    color: var(--lime);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: transform 0.2s ease;
+}
+
+.social-dark-circle:hover {
+    transform: translateY(-3px);
+    color: #ffffff;
+}
+
+.contact-form-card {
+    background-color: var(--bg-card-alt);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 34px;
+}
+
+.contact-form-card .form-control,
+.contact-form-card .form-select {
+    background-color: #0f131a;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    padding: 12px 14px;
+    border-radius: 10px;
+}
+
+.contact-form-card .form-control::placeholder {
+    color: #6b7280;
+}
+
+.contact-form-card .form-control:focus,
+.contact-form-card .form-select:focus {
+    background-color: #0f131a;
+    color: #ffffff;
+    border-color: var(--lime);
+    box-shadow: 0 0 0 0.2rem rgba(163, 230, 53, 0.2);
+}
+
+/* ==================== Footer ==================== */
+.footer-section {
+    background-color: #07090c;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 64px 0 28px 0;
+}
+
+.footer-links a {
+    display: block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--lime);
+}
+
+.footer-social {
+    color: var(--text-muted);
+    font-size: 17px;
+    margin-right: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-social:hover {
+    color: var(--lime);
+}
